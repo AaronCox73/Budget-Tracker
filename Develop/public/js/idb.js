@@ -9,7 +9,7 @@ const request = indexedDB.open('transaction_unit', 1);
 
 request.onupgradeneeded = function (event) {
     // save a reference to the database
-    const db = event.target.results;
+    const db = event.target.result;
     // create an object store (table) called `new_""`, set it to have an auto incrementing primary key of sorts 
     db.createObjectStore('new_transaction', { autoIncrement: true });
 };
